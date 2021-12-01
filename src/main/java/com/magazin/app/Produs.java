@@ -1,17 +1,24 @@
 package com.magazin.app;
 
+import org.springframework.context.annotation.Configuration;
+
+
 public class Produs {
 	
-	private final long id;
+
+	private long id;
 	private double pret;
-	private String titlu, autor, linkCoperta, linkDescarcare;
+	private String titlu, autor, descriere, linkCoperta, linkDescarcare;
 	
-	public Produs(long id, String titlu, String autor, String linkCoperta, String linkDescarcare, double pret) {
+	public Produs() {}
+	
+	public Produs(long id, String titlu, String autor, String descriere, String linkCoperta, String linkDescarcare, double pret) {
 		super();
 		this.id = id;
 		this.pret = pret;
 		this.titlu = titlu;
 		this.autor = autor;
+		this.descriere = descriere;
 		this.linkCoperta = linkCoperta;
 		this.linkDescarcare = linkDescarcare;
 	}
@@ -58,10 +65,23 @@ public class Produs {
 		this.linkDescarcare = linkDescarcare;
 	}
 
+	
+	public String getDescriere() {
+		return descriere;
+	}
+
+	public void setDescriere(String descriere) {
+		this.descriere = descriere;
+	}
+
+	public void setId(long id) {
+		this.id = id;
+	}
+
 	@Override
 	public String toString() {
-		return "Produs [id=" + id + ", pret=" + pret + ", titlu=" + titlu + ", autor=" + autor + ", linkCoperta="
-				+ linkCoperta + ", linkDescarcare=" + linkDescarcare + "]";
+		return "Produs [id=" + id + ", pret=" + pret + ", titlu=" + titlu + ", autor=" + autor + ", descriere="
+				+ descriere + ", linkCoperta=" + linkCoperta + ", linkDescarcare=" + linkDescarcare + "]";
 	}
 
 
