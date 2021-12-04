@@ -1,18 +1,14 @@
 package com.magazin.app;
 
-import org.springframework.context.annotation.Configuration;
-
-
 public class Produs {
 	
-
-	private long id;
+	private Integer id;
 	private double pret;
 	private String titlu, autor, descriere, linkCoperta, linkDescarcare;
 	
 	public Produs() {}
 	
-	public Produs(long id, String titlu, String autor, String descriere, String linkCoperta, String linkDescarcare, double pret) {
+	public Produs(Integer id, String titlu, String autor, String descriere, String linkCoperta, String linkDescarcare, double pret) {
 		super();
 		this.id = id;
 		this.pret = pret;
@@ -22,8 +18,9 @@ public class Produs {
 		this.linkCoperta = linkCoperta;
 		this.linkDescarcare = linkDescarcare;
 	}
-	
-	public long getId() {
+
+
+	public Integer getId() {
 		return id;
 	}
 	public String getTitlu() {
@@ -43,8 +40,6 @@ public class Produs {
 		return pret;
 	}
 	
-	
-
 	public void setPret(double pret) {
 		this.pret = pret;
 	}
@@ -65,7 +60,6 @@ public class Produs {
 		this.linkDescarcare = linkDescarcare;
 	}
 
-	
 	public String getDescriere() {
 		return descriere;
 	}
@@ -74,7 +68,7 @@ public class Produs {
 		this.descriere = descriere;
 	}
 
-	public void setId(long id) {
+	public void setId(Integer id) {
 		this.id = id;
 	}
 
