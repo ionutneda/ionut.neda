@@ -1,8 +1,6 @@
 package com.magazin.app;
 
 import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
@@ -23,8 +21,8 @@ public class ControllerCos {
 	// creez obiect cos care ia ca parametru listaLinii
 	//private Cos cos = new Cos(listaLinii);
 
-	private LinieCos l1 = new LinieCos(ControllerProdus.listaProduse.get(1) ,2);
-	private LinieCos l2 = new LinieCos(ControllerProdus.listaProduse.get(0));
+	private LinieCos l1 = new LinieCos(ProdusController.listaProduse.get(1) ,2);
+	private LinieCos l2 = new LinieCos(ProdusController.listaProduse.get(0));
 	private Cos cos = new Cos();
 	{
 		cos.addLinieInCos(l1);
