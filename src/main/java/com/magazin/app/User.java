@@ -1,33 +1,37 @@
 package com.magazin.app;
 
+import javax.persistence.CascadeType;
+import javax.persistence.Entity;
+import javax.persistence.OneToMany;
+import java.util.ArrayList;
 import java.util.List;
 
-public abstract class User {
+@Entity
+public class User extends EntitateDeBaza{
 
-	private Integer id;
 	private String nume, prenume, email, parola;
-	private List listaComenziUser;
+
+	@OneToMany(
+			mappedBy = "comenziUser",
+			cascade = CascadeType.ALL,
+			orphanRemoval = true)
+	private List<Comanda> comenziUser = new ArrayList<>();
 	
 	public User() {}
 	
-	public User(Integer id, String nume, String prenume, String email, String parola, List listaComenziUser) {
+	public User(String nume, String prenume, String email, String parola, List comenziUser) {
 		super();
-		this.id = id;
 		this.nume = nume;
 		this.prenume = prenume;
 		this.email = email;
 		this.parola = parola;
-		this.listaComenziUser = listaComenziUser;
+		this.comenziUser = comenziUser;
 	}
 
-	public Integer getId() {
-		return id;
+	public void addListaComenziUser(Comanda comanda){
+		comenziUser.add(comanda);
+		comanda.setUser(this);
 	}
-
-	public void setId(Integer id) {
-		this.id = id;
-	}
-
 	public String getNume() {
 		return nume;
 	}
@@ -60,18 +64,22 @@ public abstract class User {
 		this.parola = parola;
 	}
 
-	public List getListaComenziUser() {
-		return listaComenziUser;
+	public List getComenziUser() {
+		return comenziUser;
 	}
 
-	public void setListaComenziUser(List listaComenziUser) {
-		this.listaComenziUser = listaComenziUser;
+	public void setComenziUser(List comenziUser) {
+		this.comenziUser = comenziUser;
 	}
 
 	@Override
 	public String toString() {
-		return "User [id=" + id + ", nume=" + nume + ", prenume=" + prenume + ", email=" + email + ", parola=" + parola
-				+ ", listaComenziUser=" + listaComenziUser + "]";
+		return "User [id=" + super.getId() +
+				", nume=" + nume +
+				", prenume=" + prenume +
+				", email=" + email +
+				", parola=" + parola
+				+ ", comenziUser=" + comenziUser + "]";
 	}
 	
 	

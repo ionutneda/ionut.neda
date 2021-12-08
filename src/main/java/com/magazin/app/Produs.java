@@ -1,16 +1,21 @@
 package com.magazin.app;
 
-public class Produs {
-	
-	private Integer id;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+
+@Entity
+public class Produs extends EntitateDeBaza{
+
+
 	private double pret;
 	private String titlu, autor, descriere, linkCoperta, linkDescarcare;
 	
 	public Produs() {}
 	
-	public Produs(Integer id, String titlu, String autor, String descriere, String linkCoperta, String linkDescarcare, double pret) {
+	public Produs(String titlu, String autor, String descriere, String linkCoperta, String linkDescarcare, double pret) {
 		super();
-		this.id = id;
 		this.pret = pret;
 		this.titlu = titlu;
 		this.autor = autor;
@@ -19,10 +24,6 @@ public class Produs {
 		this.linkDescarcare = linkDescarcare;
 	}
 
-
-	public Integer getId() {
-		return id;
-	}
 	public String getTitlu() {
 		return titlu;
 	}
@@ -68,19 +69,10 @@ public class Produs {
 		this.descriere = descriere;
 	}
 
-	public void setId(Integer id) {
-		this.id = id;
-	}
-
 	@Override
 	public String toString() {
-		return "Produs [id=" + id + ", pret=" + pret + ", titlu=" + titlu + ", autor=" + autor + ", descriere="
+		return "Produs [id=" + super.getId() + ", pret=" + pret + ", titlu=" + titlu + ", autor=" + autor + ", descriere="
 				+ descriere + ", linkCoperta=" + linkCoperta + ", linkDescarcare=" + linkDescarcare + "]";
 	}
-
-
-	
-	
-	
 
 }

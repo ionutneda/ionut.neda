@@ -1,29 +1,31 @@
 package com.magazin.app;
 
+import javax.persistence.Entity;
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Map;
 import java.util.Map.Entry;
 
-public class Cos {
+@Entity
+public class Cos extends EntitateDeBaza{
 	
 
 	private Double pretTotalCos = (double) 0;
-	
-	//lista linii din cos, diferita de lista linii din controllerCos
-	private Map<Integer, LinieCos> listaLiniiCos;
 
-	public Cos() {}
+	private List<LinieCos> liniiCos = new ArrayList<>();
 
-	public Cos(Map<Integer, LinieCos> listaLiniiCos) {
-		super();
-		this.listaLiniiCos = listaLiniiCos;
-		for(Map.Entry<Integer, LinieCos> entry : listaLiniiCos.entrySet()) {
-			//Integer key = entry.getKey();
-			LinieCos value = entry.getValue();
-			//LinieCos value = listaLiniiCos.get(e);
-			pretTotalCos += value.getPretLinie();
+	public Cos(){}
+
+	public Cos(List<LinieCos> liniiCos) {
+		this.liniiCos = liniiCos;
+		for (LinieCos linie: liniiCos ) {
+			pretTotalCos += linie.getPretLinie();
 		}
 	}
-	
+
+	public void addLinieInCos(LinieCos linie){
+		liniiCos.add(linie);
+	}
 
 	public Double getPretTotalCos() {
 		return pretTotalCos;
@@ -33,22 +35,19 @@ public class Cos {
 		this.pretTotalCos = pretTotalCos;
 	}
 
-	public Map<Integer, LinieCos> getListaLiniiCos() {
-		return listaLiniiCos;
+	public List<LinieCos> getLiniiCos() {
+		return liniiCos;
 	}
 
-	public void setListaLiniiCos(Map<Integer, LinieCos> listaLiniiCos) {
-		this.listaLiniiCos = listaLiniiCos;
+	public void setLiniiCos(List<LinieCos> liniiCos) {
+		this.liniiCos = liniiCos;
 	}
 
 	@Override
 	public String toString() {
-		return "Cos [pretTotalCos=" + pretTotalCos + ", listaLiniiCos=" + listaLiniiCos + "]";
+		return "Cos{" +
+				"pretTotalCos=" + pretTotalCos +
+				", liniiCos=" + liniiCos +
+				'}';
 	}
-	
-
-
-
-	
-	
 }

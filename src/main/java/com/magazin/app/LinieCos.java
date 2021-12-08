@@ -1,22 +1,33 @@
 package com.magazin.app;
 
-public class LinieCos {
+import javax.persistence.Entity;
 
-	private Produs produsLinie;
+@Entity
+public class LinieCos extends EntitateDeBaza{
+
+	private Produs produs;
 	private Integer cantitate;
 	private Double pretLinie; // pretul unui produs daca este 1 bucata sau pret total pt un produs cu mai multe bucati
 
 	
 	public LinieCos() {}
 	
-	public LinieCos(Produs produsLinie, Integer cantitate) {
+	public LinieCos(Produs produs, Integer cantitate) {
 		super();
-		this.produsLinie = produsLinie;
+		this.produs = produs;
 		this.cantitate = cantitate;
-		this.pretLinie = produsLinie.getPret()*cantitate;
+		this.pretLinie = produs.getPret()*cantitate;
 	}
 
-	
+	public LinieCos(Produs produs) {
+		this.produs = produs;
+	}
+
+
+
+	public void addCantitate(Integer cantitateAdaugata){
+		this.cantitate = this.cantitate + cantitateAdaugata;
+	}
 	
 	public Double getPretLinie() {
 		return pretLinie;
@@ -26,12 +37,12 @@ public class LinieCos {
 		this.pretLinie = pretLinie;
 	}
 
-	public Produs getProdusLinie() {
-		return produsLinie;
+	public Produs getProdus() {
+		return produs;
 	}
 
-	public void setProdusLinie(Produs produsLinie) {
-		this.produsLinie = produsLinie;
+	public void setProdus(Produs produs) {
+		this.produs = produs;
 	}
 
 	public Integer getCantitate() {
@@ -44,7 +55,7 @@ public class LinieCos {
 
 	@Override
 	public String toString() {
-		return "LinieCos [produsCos=" + produsLinie + ", cantitate=" + cantitate + ", pretLinie=" + pretLinie + "]";
+		return "LinieCos [produsCos=" + produs + ", cantitate=" + cantitate + ", pretLinie=" + pretLinie + "]";
 	}
 	
 	
