@@ -72,4 +72,5 @@ public class Produs extends EntitateDeBaza{
 				+ descriere + ", linkCoperta=" + linkCoperta + ", linkDescarcare=" + linkDescarcare + "]";
 	}
 
+
 }

@@ -7,7 +7,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 @Entity
-public class User extends EntitateDeBaza{
+public class Utilizator extends EntitateDeBaza{
 
 	private String nume, prenume, email, parola;
 
@@ -15,22 +15,22 @@ public class User extends EntitateDeBaza{
 			mappedBy = "comenziUser",
 			cascade = CascadeType.ALL,
 			orphanRemoval = true)
-	private List<Comanda> comenziUser = new ArrayList<>();
+	private List<Comanda> comenziUtilizator = new ArrayList<>();
 	
-	public User() {}
+	public Utilizator() {}
 	
-	public User(String nume, String prenume, String email, String parola, List comenziUser) {
+	public Utilizator(String nume, String prenume, String email, String parola, List<Comanda> comenziUtilizator) {
 		super();
 		this.nume = nume;
 		this.prenume = prenume;
 		this.email = email;
 		this.parola = parola;
-		this.comenziUser = comenziUser;
+		this.comenziUtilizator = comenziUtilizator;
 	}
 
-	public void addListaComenziUser(Comanda comanda){
-		comenziUser.add(comanda);
-		comanda.setUser(this);
+	public void addComanda(Comanda comanda){
+		comenziUtilizator.add(comanda);
+		comanda.setUtilizator(this);
 	}
 	public String getNume() {
 		return nume;
@@ -64,12 +64,12 @@ public class User extends EntitateDeBaza{
 		this.parola = parola;
 	}
 
-	public List getComenziUser() {
-		return comenziUser;
+	public List<Comanda> getComenziUser() {
+		return comenziUtilizator;
 	}
 
-	public void setComenziUser(List comenziUser) {
-		this.comenziUser = comenziUser;
+	public void setComenziUser(List<Comanda> comenziUser) {
+		this.comenziUtilizator = comenziUser;
 	}
 
 	@Override
@@ -79,7 +79,7 @@ public class User extends EntitateDeBaza{
 				", prenume=" + prenume +
 				", email=" + email +
 				", parola=" + parola
-				+ ", comenziUser=" + comenziUser + "]";
+				+ ", comenziUser=" + comenziUtilizator + "]";
 	}
 	
 	

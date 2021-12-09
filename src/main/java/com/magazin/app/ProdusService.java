@@ -26,7 +26,6 @@ public class ProdusService {
         produsRepository.save(produs);
     }
 
-    // nesigur
     public void updateProdus(Long id, Produs produs) {
         produsRepository.save(produs);
     }

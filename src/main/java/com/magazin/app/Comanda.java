@@ -16,12 +16,12 @@ public class Comanda extends EntitateDeBaza{
 	@DateTimeFormat(pattern = "dd/MM/yyyy")
 	private Date dataComenzii;
 
-	@ManyToOne(fetch = FetchType.LAZY)
-	private User user;
+	//@ManyToOne(fetch = FetchType.LAZY)
+	private Utilizator utilizator;
 	private Map<Produs, Integer> listaProduseCos;
 
 
-    public void setUser(User user) {
-		this.user = user;
+    public void setUtilizator(Utilizator utilizator) {
+		this.utilizator = utilizator;
     }
 }
