@@ -7,6 +7,7 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 
 import model.Produs;
+import repo.ProdusRepository;
 import services.ProdusService;
 
 
@@ -15,6 +16,8 @@ public class ProdusController {
 
 	@Autowired
 	private ProdusService produsService;
+	
+	private ProdusRepository produsRepository;
 
 	@GetMapping("/produse")
 	public List<Produs> getAllProduse(Model model){
@@ -31,6 +34,13 @@ public class ProdusController {
 	@PostMapping("/produse/add")
 	public void addProdus(@RequestBody Produs produs) {
 		produsService.addProdus(produs);
+	}
+	
+	@PostMapping("/creareProdus")
+	public String creareProdus(@ModelAttribute Produs produs, Model model) {
+		model.addAttribute("produs", produs);
+		produsRepository.save(produs);
+		return "redirect:/produse";
 	}
 	
 	@PostMapping("/produse/{id}")
