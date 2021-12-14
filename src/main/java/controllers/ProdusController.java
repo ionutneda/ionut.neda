@@ -1,11 +1,13 @@
-package com.magazin.app;
+package controllers;
 
-import java.util.ArrayList;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
+
+import model.Produs;
+import services.ProdusService;
 
 
 @RestController
@@ -26,7 +28,7 @@ public class ProdusController {
 		return produsService.getProdus(id);
 	}
 
-	@PostMapping("/produse/{id}")
+	@PostMapping("/produse/add")
 	public void addProdus(@RequestBody Produs produs) {
 		produsService.addProdus(produs);
 	}

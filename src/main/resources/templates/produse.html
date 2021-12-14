@@ -5,6 +5,16 @@
 <title>Magazin</title>
 </head>
 <body>
-<h4>ionutneda magazin</h4>
+<h2>Produse</h4>
+	<ul>
+		<li th:each="produs : ${produse}">
+			<span th:text="${produs.titlu}">Default</span>
+			<span th:text="${produs.autor}">Default</span>
+			<span th:text="${produs.descriereScurta}">Default</span> 
+			<span th:text="${produs.linkDescarcarer}">Default</span>
+			<span th:text="${produs.pret}">Default</span> 
+		</li>
+	</ul>
+
 </body>
 </html>

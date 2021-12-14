@@ -1,0 +1,40 @@
+!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<title>Adaugare produs</title>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+</head>
+
+<body>
+<form action="#" th:action="@{/produse/add}" th:object="${produs}"
+	method="post">
+	<fieldset>
+		<input type="submit" id="submitButton" th:value="Save">
+		<table>
+			<thead>
+				<tr>
+					<th>Titlu</th>
+					<th>Autor</th>
+					<th>Descriere scurta</th>
+					<th>Descriere lunga</th>
+					<th>Link coperta</th>
+					<th>Link descarcare</th>
+					<th>Pret</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr>
+					<td><input th:field="*{titlu}" /></td>
+					<td><input th:field="*{autor}" /></td>
+					<td><input th:field="*{descriereScurta}" /></td>
+					<td><input th:field="*{descriereLunga}" /></td>
+					<td><input th:field="*{linkCoperta}" /></td>
+					<td><input th:field="*{linkDescarcare}" /></td>
+					<td><input th:field="*{pret}" /></td>
+				</tr>
+			</tbody>
+		</table>
+	</fieldset>
+</form>
+</body>
+</html>
