@@ -1,16 +1,26 @@
 <!DOCTYPE HTML>
-<html>
+<html lang="en" xmlns:th="https://www.thymeleaf.org/">
 <head>
     <title>Getting Started: Serving Web Content</title>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
 </head>
 <body>
     <p>Vezi produsele <a href="/produse">here</a></p>
+    <a th:href="@{/produse}"><span>aici-----</span></a>
     <p>Adauga produs <a href="/creareProdus">here</a></p>
+    <a th:href="@{/creareProdus}"><span>aici</span></a>
     
     <p>Vezi utilizatorii <a href="/utilizatori">here</a></p>
     <p>Adauga utilizator <a href="/addUtilizator">here</a></p>
     <p>Vezi comenzile <a href="/comenzi">here</a></p>
     <p>Adauga comanda <a href="/addComanda">here</a></p>
+    
+    <p>Please select an option</p>
+<ol>
+  <li><a href="register_form.html" th:href="@{/utilizator/adauga}">Inregistrare user nou</a></li>
+  <li><a href="order/list.html" th:href="@{/order/list}">Order List</a></li>
+  <li><a href="subscribe.html" th:href="@{/subscribe}">Subscribe to our Newsletter</a></li>
+  <li><a href="userprofile.html" th:href="@{/userprofile}">See User Profile</a></li>
+</ol>
 </body>
 </html>

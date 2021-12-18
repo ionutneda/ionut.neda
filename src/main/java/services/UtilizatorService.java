@@ -36,4 +36,9 @@ public class UtilizatorService {
     public void deleteUtilizator(Long id) {
     	utilizatorRepository.deleteById(id);
     }
+
+	public void save(Utilizator utilizator) {
+		utilizatorRepository.save(utilizator);
+		
+	}
 }

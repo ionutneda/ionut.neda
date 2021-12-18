@@ -1,0 +1,43 @@
+<!DOCTYPE HTML>
+<html lang="en" xmlns:th="https://www.thymeleaf.org/">
+<head>
+    <title>Inregistrare user</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <style type ="text/css">
+    	label {
+    		display: inline-block;
+    		width: 100px;
+    		margin: 5px;
+    		text-align: left;
+    	}
+    </style>
+</head>
+<body>
+	<div align="center">
+		<h1>Inregistrare user nou</h1>
+		<form action="#" th:action="@{/utilizator/add}" th:object="${utilizator}" method="post">
+			<label>Nume: </label>
+			<input type="text" th:field="*{/nume}" /> <br/>
+			<label>Prenume: </label>
+			<input type="text" th:field="*{/nume}" /> <br/>
+			<label>E-mail: </label>
+			<input type="text" th:field="*{/nume}" /> <br/>
+			<label>Gen: </label>
+			<input type="text" th:field="*{/nume}" /> <br/>
+			<label>Casatorit/a: </label>
+			<input type="text" th:field="*{/nume}" /> <br/>
+			<label>Data nasterii: </label>
+			<input type="text" th:field="*{/nume}" /> <br/>
+			<label>Adresa: </label>
+			<input type="text" th:field="*{/nume}" /> <br/>
+			
+			<button type="submit">Inregistrare</button>
+			<div class="col-md-8 row">
+                        <button type="submit" class="btn btn-success">Inregistrare user</button>
+                        <a class="btn btn-danger" th:href="@{/}">Cancel</a>
+                    </div>
+		</form>
+	</div>
+
+</body>
+</html>

@@ -6,11 +6,11 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import model.Carte;
 import model.ItemCos;
-import model.Produs;
 import model.Utilizator;
 import repo.ItemCosRepository;
-import repo.ProdusRepository;
+import repo.CarteRepository;
 
 @Service
 public class CosService {
@@ -21,19 +21,19 @@ public class CosService {
     private ItemCosRepository cosRepository;
     
     @Autowired
-    private ProdusRepository produsRepository;
+    private CarteRepository carteRepository;
     
     
     public List<ItemCos> listaItemiCos(Utilizator utilizator) {
     	return cosRepository.findByUtilizator(utilizator);
     }
     
-    public Integer addProdus(Long idProdus, Integer cantitate, Utilizator utilizator) {
+    public Integer addCarte(Long idCarte, Integer cantitate, Utilizator utilizator) {
     	Integer cantitateAdaugata = cantitate;
     	
-    	Produs produs = produsRepository.findById(idProdus).get();
+    	Carte carte = carteRepository.findById(idCarte).get();
     	
-    	ItemCos itemCos = cosRepository.findByUtilizatorAndProdus(utilizator, produs);
+    	ItemCos itemCos = cosRepository.findByUtilizatorAndCarte(utilizator, carte);
     	
     	if (itemCos != null) {
     		cantitateAdaugata = itemCos.getCantitate() + cantitate;
@@ -42,7 +42,7 @@ public class CosService {
     		itemCos = new ItemCos();
     		itemCos.setCantitate(cantitate);
     		itemCos.setUtilizator(utilizator);
-    		itemCos.setProdus(produs);
+    		itemCos.setCarte(carte);
     	}
     	
     	cosRepository.save(itemCos);

@@ -1,4 +1,4 @@
-!DOCTYPE HTML>
+<!DOCTYPE HTML>
 <html xmlns:th="http://www.thymeleaf.org">
 <head>
 <title>Adaugare produs</title>
@@ -9,7 +9,7 @@
 <form action="#" th:action="@{/produse/add}" th:object="${produs}"
 	method="post">
 	<fieldset>
-		<input type="submit" id="submitButton" th:value="Save">
+		
 		<table>
 			<thead>
 				<tr>
@@ -33,6 +33,11 @@
 					<td><input th:field="*{pret}" /></td>
 				</tr>
 			</tbody>
+			
+			<div class="col-md-8 row">
+                        <button type="submit" class="btn btn-success">Add Book</button>
+                        <a class="btn btn-danger" th:href="@{/}">Cancel</a>
+                    </div>
 		</table>
 	</fieldset>
 </form>

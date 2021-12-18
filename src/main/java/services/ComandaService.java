@@ -1,7 +1,6 @@
 package services;
 
 import java.util.ArrayList;
-import java.util.Date;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -9,11 +8,8 @@ import org.springframework.stereotype.Service;
 
 import model.Comanda;
 import model.ItemCos;
-import model.Produs;
-import model.Utilizator;
 import repo.ComandaRepository;
 import repo.ItemCosRepository;
-import repo.ProdusRepository;
 
 @Service
 public class ComandaService {

@@ -3,8 +3,8 @@ package repo;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 
-import model.Produs;
+import model.Carte;
 
 @Repository
-public interface ProdusRepository extends JpaRepository<Produs, Long> {
+public interface CarteRepository extends JpaRepository<Carte, Long> {
 }

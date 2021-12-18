@@ -6,24 +6,24 @@ import javax.persistence.Transient;
 @Entity
 public class ItemCos extends EntitateDeBaza{
 
-	// id auto mostenit
+	// id  mostenit
 	
-	private Produs produs;
+	private Carte carte;
 	private Utilizator utilizator;
 	private Integer cantitate;
 	
 	public ItemCos() {}
 	
-	public ItemCos(Produs produs, Utilizator utilizator, Integer cantitate) {
+	public ItemCos(Carte carte, Utilizator utilizator, Integer cantitate) {
 		super();
-		this.produs = produs;
+		this.carte = carte;
 		this.utilizator = utilizator;
 		this.cantitate = cantitate;
 	}
 	
 
-	public ItemCos(Produs produs) {
-		this.produs = produs;
+	public ItemCos(Carte carte) {
+		this.carte = carte;
 	}
 
 
@@ -32,13 +32,10 @@ public class ItemCos extends EntitateDeBaza{
 	}
 	
 
-	public Produs getProdus() {
-		return produs;
+	public Carte getCarte() {
+		return carte;
 	}
 
-	public void setProdus(Produs produs) {
-		this.produs = produs;
-	}
 
 	public Integer getCantitate() {
 		return cantitate;
@@ -58,12 +55,17 @@ public class ItemCos extends EntitateDeBaza{
 
 	@Transient
 	public Double getSubtotal() {
-		return this.produs.getPret() * cantitate;
+		return this.carte.getPret() * cantitate;
 	}
 	
 	@Override
 	public String toString() {
-		return "ItemCos [produs=" + produs + ", utilizator=" + utilizator + ", cantitate=" + cantitate + "]";
+		return "ItemCos [carte=" + carte + ", utilizator=" + utilizator + ", cantitate=" + cantitate + "]";
+	}
+
+	public void setCarte(Carte carte) {
+		this.carte = carte;
+		
 	}
 	
 	

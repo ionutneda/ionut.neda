@@ -1,0 +1,45 @@
+<!DOCTYPE HTML>
+<html lang="en" xmlns:th="https://www.thymeleaf.org/">
+<head>
+    <title>Raspuns inregistrare user</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+        <style type ="text/css">
+    	span {
+    		display: inline-block;
+    		width: 100px;
+    		text-align: left;
+    	}
+    </style>
+</head>
+<body>
+	<div align="center">
+		<h1>Userul a fost inregistrat</h1>
+		
+			
+			<span>Nume:</span><span th:text="${user.nume"></span><br/>
+			<span>Prenume:</span><span th:text="${user.prenume"></span><br/>
+			<span>E-mail:</span><span th:text="${user.email"></span><br/>
+			<span>Gen:</span><span th:text="${user.gen"></span><br/>
+			<span>Casatorit/a:</span><span th:text="${user.casatorit"></span><br/>
+			<span>Data nasterii:</span><span th:text="${user.dataNasterii"></span><br/>
+			<span>Adresa:</span><span th:text="${user.adresa"></span><br/>
+			
+			<h2>Produse</h2>
+	<ul>
+		<li th:each="produs : ${produse}">
+			<span th:text="${produs.titlu}">Default</span>
+			<span th:text="${produs.autor}">Default</span>
+			<span th:text="${produs.descriereScurta}">Default</span>
+			<span th:text="${produs.linkDescarcarer}">Default</span>
+			<span th:text="${produs.pret}">Default</span> 
+		</li>
+	</ul>
+			
+			
+			<a href="/index">Apasa aici pentru a naviga catre pagina principala</a><br/>
+			<a href="/register">Apasa aici pentru a inregistra un nou user</a>
+		
+	</div>
+
+</body>
+</html>

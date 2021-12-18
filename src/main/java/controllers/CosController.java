@@ -11,6 +11,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 import model.ItemCos;
 import model.Utilizator;
+import services.CarteService;
 import services.CosService;
 import services.UtilizatorService;
 
@@ -23,6 +24,8 @@ public class CosController {
 	
 	@Autowired
 	private UtilizatorService utilizatorService;
+	@Autowired
+	private CarteService carteService;
 	
 	
 	@GetMapping("/cos")
@@ -33,13 +36,13 @@ public class CosController {
 		return "cos"; //numele paginii .html
 	}
 	
-	@PostMapping("/cos/add/{pid}/{cantitate}")
-	public String addProdusInCos(@PathVariable ("pid") Long idProdus,
-								@PathVariable("cantitate") Integer cantitate) {
-		Utilizator utilizator = utilizatorService.getUtilizator(idProdus);
-		Integer cantitateAdaugata = cosService.addProdus(idProdus, cantitate, utilizator);
-		return cantitateAdaugata + " bucata/bucati din acest produs au fost adaugate in cos.";
-	}
+//	@PostMapping("/cos/add/{pid}/{cantitate}")
+//	public String addCInCos(@PathVariable ("pid") Long idProdus,
+//								@PathVariable("cantitate") Integer cantitate) {
+//		Utilizator utilizator = utilizatorService.getUtilizator(idProdus);
+//		Integer cantitateAdaugata = cosService.addCarte(carteService.getCarte().getId(), cantitate, utilizator);
+//		return cantitateAdaugata + " bucata/bucati din acest produs au fost adaugate in cos.";
+//	}
 	
 	
 

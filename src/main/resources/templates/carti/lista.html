@@ -1,0 +1,25 @@
+
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Carti</title>
+</head>
+<body>
+<h1>Lista Carti</h1>
+<table>
+    <tr>
+        <th>ID</th>
+        <th>Titlu</th>
+        <th>Autor</th>
+        <th>Editura</th>
+    </tr>
+    <tr th:each="carte : ${carti}">
+        <td th:text="${carte.id}"></td>
+        <td th:text="${carte.title}"></td>
+        <td th:text="${carte.autor.nume}"></td>
+        <td th:text="${book.editura.nume}"></td>
+    </tr>
+</table>
+</body>
+</html>

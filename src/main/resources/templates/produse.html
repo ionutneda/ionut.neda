@@ -1,16 +1,17 @@
-<html>
+<!DOCTYPE HTML>
+<html lang="en" xmlns:th="https://www.thymeleaf.org/">
 <head>
 <meta charset = "ISO-8859-1" />
 <link href = "css/styles.css" rel = "stylesheet" />
 <title>Magazin</title>
 </head>
 <body>
-<h2>Produse</h4>
+<h2>Produse</h2>
 	<ul>
 		<li th:each="produs : ${produse}">
 			<span th:text="${produs.titlu}">Default</span>
 			<span th:text="${produs.autor}">Default</span>
-			<span th:text="${produs.descriereScurta}">Default</span> 
+			<span th:text="${produs.descriereScurta}">Default</span>
 			<span th:text="${produs.linkDescarcarer}">Default</span>
 			<span th:text="${produs.pret}">Default</span> 
 		</li>
