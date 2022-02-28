@@ -29,6 +29,5 @@
         
 
 - Cel mai probabil unele dintre campuri vor constitui clase separate.
-- Am amestecat putin implementarea (campuri si metode) cu ce imi imaginez eu ca trebuie sa contina efectiv paginile, dar astept sugestii de imbunatatire. Nu stiu cate dintre taskuri voi putea face.
+- Am amestecat putin implementarea (campuri si metode) cu ce imi imaginez eu ca trebuie sa contina efectiv paginile, dar astept sugestii de imbunatatire.
 
-- Incep prin crearea unui pachet cu clasele necesare.
